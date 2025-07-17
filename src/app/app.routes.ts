@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-
+  {
+    path: 'login',
+    loadComponent: () => import('./pages/auth/login/login'),
+  },
   {
     path: '**',
-    loadComponent: () => import('./pages/tryckers-page/tryckers-page.component'),
-  }
+    loadComponent: () =>
+      import('./pages/tryckers-page/tryckers-page.component'),
+  },
 ];
