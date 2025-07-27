@@ -4,7 +4,7 @@ import { FooterComponent } from "../../components/footer/footer.component";
 
 @Component({
   selector: 'app-tryckers-page',
-  imports: [HeaderComponent, FooterComponent],
+  imports: [],
   templateUrl: './tryckers-page.component.html',
 })
 export default class TryckersPageComponent { }

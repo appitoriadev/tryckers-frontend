@@ -28,6 +28,5 @@ export class FooterComponent {
       icon: 'fa-brands fa-x-twitter',
       route: ''
     },
-
   ]
  }

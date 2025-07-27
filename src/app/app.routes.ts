@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+
 import { Routes } from '@angular/router';
+import { NotAuthenticatedGuard } from '@auth/guards/not-authenticated.guard';
 
 export const routes: Routes = [
-
   {
-    path: '**',
-    loadComponent: () => import('./pages/tryckers-page/tryckers-page.component'),
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.routes'),
+     canMatch:[
+       NotAuthenticatedGuard
+    ]
+  },
+  {
+    path: '',
+    loadChildren: () => import('./tryckers/tryckers.routes')
   }
 ];
