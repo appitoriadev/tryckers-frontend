@@ -12,11 +12,18 @@
           label="Cartelera"
           [text]="true"
           routerLink="/cartelera"
+          (onClick)="navigateTo('/cartelera')"
         ></p-button>
         <p-button
-          label="Login / Registro"
+          label="Login"
           [text]="true"
-          routerLink="/login"
+          (onClick)="navigateTo('/auth/login')"
+        ></p-button>
+        <p-button
+          label="Registro"
+          [text]="true"
+          routerLink="/register"
+          (onClick)="navigateTo('/auth/register')"
         ></p-button>
       </div>
     </ng-template>

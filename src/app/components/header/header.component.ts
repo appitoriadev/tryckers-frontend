@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { Menubar } from 'primeng/menubar';
 
 @Component({
   selector: 'app-header',
-  imports: [Menubar, ButtonModule],
+  imports: [Menubar, ButtonModule, RouterModule],
   templateUrl: './header.component.html',
   styles: [
     `
@@ -42,5 +43,11 @@ import { Menubar } from 'primeng/menubar';
 export class HeaderComponent implements OnInit {
   items: MenuItem[] | undefined;
 
+  constructor(private router: Router) {}
+
   ngOnInit() {}
+
+  navigateTo(route: string): void {
+    this.router.navigate([route]);
+  }
 }
