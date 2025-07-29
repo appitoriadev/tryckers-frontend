@@ -1,0 +1,29 @@
+<form class="flex flex-col gap-2"
+  [formGroup]="registerForm"
+  (ngSubmit)="onSubmit()"
+>
+
+  <input pInputText type="text" placeholder="Username" formControlName="name" class="p-inputtext w-full" />
+
+  <select formControlName="country" class="p-inputtext w-full">
+    <option [ngValue]="''" disabled>Selecciona un país</option>
+    @for (country of countries; track $index) {
+      <option [ngValue]="country.name">{{ country.name }}</option>
+    }
+  </select>
+
+  <input type="email" pInputText placeholder="Email" formControlName="email" class="p-inputtext w-full" />
+
+  <input type="password" pInputText placeholder="Password" formControlName="password" class="p-inputtext w-full" />
+
+  <p-button type="submit" label="REGISTRARSE" class="mt-2" styleClass="w-full"/>
+</form>
+
+
+
+
+
+
+
+
+
